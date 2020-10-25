@@ -2,6 +2,7 @@ var timerCount = 100
 var timerEle = document.querySelector("#timer")
 var startButton = document.querySelector("#startbutton")
 var high = localStorage.getItem("highScore");
+var highScore = 0
 
 timerEle.textContent = timerCount
 
@@ -13,7 +14,9 @@ var optionA = document.querySelector("#optionA")
 var optionB = document.querySelector("#optionB")
 var optionC = document.querySelector("#optionC")
 var optionD = document.querySelector("#optionD")
-
+// var li = document.createElement("li");
+// li.textContent =
+// li.setAttribute("btn btn-info")
 //Questions
 
 var questions = [
@@ -47,13 +50,14 @@ var timer = window.setInterval(function() {
     timerEle.textContent = timerCount
     if(timerCount === 0){
         clearInterval(timer)
-        alert("You have run out of time! Here is your score" + score)
+        alert("You have run out of time! Try again!")
         return
     }
 }, 1000)
     if (questionsPointer === questions.length) {
         clearInterval(timer)
         alert("You are done with " + timerCount + " seconds left.")
+        prompt("Enter your initials to record your highscore")
         return
     }
 

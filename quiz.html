@@ -12,16 +12,17 @@
     <!--Nav Bar with Highscore & Timer-->
     <!-- <nav class="navbar fixed-top navbar-light bg-light">
         <a class="navbar-brand" href="#">High Scores</a>
-        <a id="timer" >100</a>
-    </nav>-->
+        <h3 id="timer" >100</h3>
+    </nav> -->
     <!--Start Questions-->
     <h1 id="timer">100</h1>
     <div id="question">
-    <container>
-        <h1>Quiz</h1>
-        <p>This is the quiz, click to start</p>
+    <div class ="container">
+        <h1>Totally Awesome & Quick JavaScript Quiz</h1>
+        <p>See how well you know JavaScript with this quick quiz. Answer all the questions before time runs out! If you answer incorrectly you'll be docked time, so make each answer count! </p>
+        <ul id="questions"></ul>
         <button id= "startbutton" class="btn btn-info"> Click Here</button>
-    </container>
+    </div>
     </div>
     <ul id="questions">
         <li class="btn btn-info" id="optionA" data-answer="A"></li>
@@ -29,6 +30,8 @@
         <li class="btn btn-info" id="optionC" data-answer="C"></li>
         <li class="btn btn-info" id="optionD" data-answer="D"></li>
     </ul>
+
+
 
 
     <script src="./script.js"></script>
