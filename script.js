@@ -1,7 +1,7 @@
 var timerCount = 100
 var timerEle = document.querySelector("#timer")
 var startButton = document.querySelector("#startbutton")
-var high = localStorage.getItem("highScore");
+var high = localStorage.getItem("score");
 var highScore = 0
 
 timerEle.textContent = timerCount
@@ -14,6 +14,8 @@ var optionA = document.querySelector("#optionA")
 var optionB = document.querySelector("#optionB")
 var optionC = document.querySelector("#optionC")
 var optionD = document.querySelector("#optionD")
+var latest = document.querySelector("#latest")
+var saved = localStorage.getItem ("score")
 // var li = document.createElement("li");
 // li.textContent =
 // li.setAttribute("btn btn-info")
@@ -57,9 +59,14 @@ var timer = window.setInterval(function() {
     if (questionsPointer === questions.length) {
         clearInterval(timer)
         alert("You scored " + highScore + "/4, with " + timerCount + " seconds left!")
-        prompt("Enter your initials to record your score!")
+        high = prompt("Enter your initials to record your score!")
+        localStorage.setItem("score", high)
         return
     }
+    //display latest highsccore
+    if (saved) {
+        latest.innerHTML = (highScore + " " + saved);
+    } 
 
     console.log(timerCount)
     question.textContent = questions[questionsPointer].q
@@ -116,6 +123,7 @@ optionD.addEventListener("click", function (){
         timerCount -= 10
     }
 })
+
 
 
 //start button to kick things off 
