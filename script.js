@@ -1,34 +1,9 @@
 var timerCount = 100
 var timerEle = document.querySelector("#timer")
 var startButton = document.querySelector("#startbutton")
-
+var high = localStorage.getItem("highScore");
 
 timerEle.textContent = timerCount
-
-
-//Questions
-
-var questions = [
-    {
-    q: "What are all the types of Pop up boxes available in JavaScript?", 
-    choices: ["Prompt", "Confirm", "Alert", "All of the Above"], 
-    a: "D"
-    },
-    {
-    q: "What is the correct syntax for referring to an external script called 'xxx.js'?", 
-    choices: ["<script src='xxx.js'>", "<script name='xxx.js'>", "<script href='xxx.js'>"], 
-    a: "A"
-    },
-    {
-    q: "How does a for loop start?", 
-    choices: ["for i = 1 to 5", "for (i = 0; i <= 5; i++)", "for (i = 0; i <= 5)", "for (i <= 5; i++)"], 
-    a: "B"
-    },
-    {
-    q: "How do you create a function in JavaScript?", 
-    choices: ["function myFunction()", "function:myFunction()", "function = myFunction()"], 
-    a: "A"
-}]
 
 //question option variables 
 var questionsPointer = 0
@@ -39,7 +14,33 @@ var optionB = document.querySelector("#optionB")
 var optionC = document.querySelector("#optionC")
 var optionD = document.querySelector("#optionD")
 
-function setQuestions() {
+//Questions
+
+var questions = [
+    {
+    q: "Which of these JavaScript interactions create a pop up box?", 
+    choices: ["Prompt", "Confirm", "Alert", "All of the Above"], 
+    a: "D"
+    },
+    {
+    q: "What is the correct syntax for referring to an external script called 'xxx.js'?", 
+    choices: ["<script src='xxx.js'>", "<script name='xxx.js'>", "<script href='xxx.js'>", "<script 'xxx.js'>"], 
+    a: "A"
+    },
+    {
+    q: "How do you start a for loop?", 
+    choices: ["for i = 1 to 5", "for (i = 0; i <= 5; i++)", "for (i = 0; i <= 5)", "for (i <= 5; i++)"], 
+    a: "B"
+    },
+    {
+    q: "How do you create a function in JavaScript?", 
+    choices: ["function myFunction()", "function:myFunction()", "function = myFunction()", "function.myFunction()"], 
+    a: "A"
+}]
+
+
+
+function startQuiz() {
 // Timer Countdown
 var timer = window.setInterval(function() {
     timerCount--;
@@ -63,14 +64,11 @@ var timer = window.setInterval(function() {
     optionC.textContent = questions[questionsPointer].choices[2]
     optionD.textContent = questions[questionsPointer].choices[3]
 }
-//Running the questions & subtracting time from timer
-
-
 //Check if answer picked matches correct answer. If wrong subtract time.
 optionA.addEventListener("click", function (){
     if (optionA.getAttribute("data-answer") === questions[questionsPointer].a){
     questionsPointer++
-    setQuestions()
+    startQuiz()
     } else {
         alert("wrong")
         timerCount -= 10
@@ -80,7 +78,7 @@ optionA.addEventListener("click", function (){
 optionB.addEventListener("click", function (){
     if (optionB.getAttribute("data-answer") === questions[questionsPointer].a){
     questionsPointer++
-    setQuestions()
+    startQuiz()
     } else {
         alert("wrong")
         timerCount -= 10
@@ -90,7 +88,7 @@ optionB.addEventListener("click", function (){
 optionC.addEventListener("click", function (){
     if (optionC.getAttribute("data-answer") === questions[questionsPointer].a){
     questionsPointer++
-    setQuestions()
+    startQuiz()
     } else {
         alert("wrong")
         timerCount -= 10
@@ -100,7 +98,7 @@ optionC.addEventListener("click", function (){
 optionD.addEventListener("click", function (){
     if (optionD.getAttribute("data-answer") === questions[questionsPointer].a){
     questionsPointer++
-    setQuestions()
+    startQuiz()
     } else {
         alert("wrong")
         timerCount -= 10
@@ -109,4 +107,4 @@ optionD.addEventListener("click", function (){
 
 
 //start button to kick things off 
-startButton.onclick = setQuestions;
+startButton.onclick = startQuiz;
