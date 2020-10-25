@@ -11,6 +11,18 @@
   padding: 30px 40px;
 }
 
+#questions {
+  margin-top: 10px;
+}
+
 .navbar {
   margin-bottom: 20px;
+}
+
+.btn-info {
+  margin: 10px;
+}
+
+p {
+  align-content: center;
 }

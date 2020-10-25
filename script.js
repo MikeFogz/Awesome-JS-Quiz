@@ -56,8 +56,8 @@ var timer = window.setInterval(function() {
 }, 1000)
     if (questionsPointer === questions.length) {
         clearInterval(timer)
-        alert("You are done with " + timerCount + " seconds left.")
-        prompt("Enter your initials to record your highscore")
+        alert("You scored " + highScore + "/4, with " + timerCount + " seconds left!")
+        prompt("Enter your initials to record your score!")
         return
     }
 
@@ -72,6 +72,8 @@ var timer = window.setInterval(function() {
 optionA.addEventListener("click", function (){
     if (optionA.getAttribute("data-answer") === questions[questionsPointer].a){
     questionsPointer++
+    highScore++
+    // console.log(highScore)
     startQuiz()
     } else {
         alert("wrong")
@@ -82,6 +84,8 @@ optionA.addEventListener("click", function (){
 optionB.addEventListener("click", function (){
     if (optionB.getAttribute("data-answer") === questions[questionsPointer].a){
     questionsPointer++
+    highScore++
+    // console.log(highScore)
     startQuiz()
     } else {
         alert("wrong")
@@ -92,6 +96,8 @@ optionB.addEventListener("click", function (){
 optionC.addEventListener("click", function (){
     if (optionC.getAttribute("data-answer") === questions[questionsPointer].a){
     questionsPointer++
+    highScore++
+    // console.log(highScore)
     startQuiz()
     } else {
         alert("wrong")
@@ -102,6 +108,8 @@ optionC.addEventListener("click", function (){
 optionD.addEventListener("click", function (){
     if (optionD.getAttribute("data-answer") === questions[questionsPointer].a){
     questionsPointer++
+    highScore++
+    // console.log(highScore)
     startQuiz()
     } else {
         alert("wrong")

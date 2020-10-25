@@ -10,8 +10,8 @@
 </head>
 <body>
     <!--Nav Bar with Highscore & Timer-->
-    <nav class="navbar fixed-top navbar-light bg-light">
-        <!-- <a class="navbar-brand" href="#">High Scores</a> -->
+    <nav class="navbar fixed-top navbar-light bg-info">
+        <a class="navbar-brand">Latest High Score</a>
         <h3 id="timer" >100</h3>
     </nav>
     <!--Start Questions-->
@@ -19,10 +19,10 @@
     <div class = "card" id="question">
         <h1>Totally Awesome & Quick JavaScript Quiz</h1>
         <p>See how well you know JavaScript with this quick quiz. Answer all the questions before time runs out! If you answer incorrectly you'll be docked time, so make each answer count! </p>
-        <ul id="questions"></ul>
+        <!-- <ul id="questions"></ul> -->
         <button id= "startbutton" class="btn btn-info"> Click Here</button>
     </div>
-    <ul id="questions">
+    <ul class = "card"  id="questions">
         <li class="btn btn-info" id="optionA" data-answer="A"></li>
         <li class="btn btn-info" id="optionB" data-answer="B"></li>
         <li class="btn btn-info" id="optionC" data-answer="C"></li>
