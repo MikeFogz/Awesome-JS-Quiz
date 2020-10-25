@@ -10,18 +10,28 @@
 </head>
 <body>
     <!--Nav Bar with Highscore & Timer-->
-    <nav class="navbar fixed-top navbar-light bg-light">
+    <!-- <nav class="navbar fixed-top navbar-light bg-light">
         <a class="navbar-brand" href="#">High Scores</a>
-        <a id="timer">100</a>
-    </nav>
+        <a id="timer" >100</a>
+    </nav>-->
     <!--Start Questions-->
-    <h1 id="question"></h1>
-    <ul>
-        <li id="optionA" data-answer="A"></li>
-        <li id="optionB" data-answer="B"></li>
-        <li id="optionC" data-answer="C"></li>
-        <li id="optionD" data-answer="D"></li>
+    <h1 id="timer">100</h1>
+    <div id="question">
+    <container>
+        <h1>Quiz</h1>
+        <p>This is the quiz, click to start</p>
+        <button id= "startbutton" class="btn btn-info"> Click Here</button>
+    </container>
+    </div>
+    <ul id="questions">
+        <li class="btn btn-info" id="optionA" data-answer="A"></li>
+        <li class="btn btn-info" id="optionB" data-answer="B"></li>
+        <li class="btn btn-info" id="optionC" data-answer="C"></li>
+        <li class="btn btn-info" id="optionD" data-answer="D"></li>
     </ul>
+
+
     <script src="./script.js"></script>
 </body>
 </html>
+
